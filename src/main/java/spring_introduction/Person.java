@@ -8,12 +8,15 @@ package spring_introduction;
  *
  * @author irinaabraeva
  */
-public class Dog implements Pet {
-    public Dog() {
-        System.out.println("Dog is created");
+public class Person {
+    private Pet pet;
+    public Person(Pet pet) {
+        System.out.println("Person is created");
+        this.pet = pet;
     }
-    @Override
-    public void say() {
-        System.out.println("Bow-Wow");
+    
+    public void callYourPet() {
+        System.out.println("Hello, my lovely Pet!");
+        pet.say();
     }
 }
