@@ -10,6 +10,9 @@ package spring_introduction;
  */
 public class Person {
     private Pet pet;
+    private String surname;
+    private int age;
+    
     public Person(Pet pet) {
         System.out.println("Person is created");
         this.pet = pet;
@@ -28,5 +31,33 @@ public class Person {
     public void callYourPet() {
         System.out.println("Hello, my lovely Pet!");
         pet.say();
+    }
+
+    /**
+     * @return the surname
+     */
+    public String getSurname() {
+        return surname;
+    }
+
+    /**
+     * @param surname the surname to set
+     */
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    /**
+     * @return the age
+     */
+    public int getAge() {
+        return age;
+    }
+
+    /**
+     * @param age the age to set
+     */
+    public void setAge(int age) {
+        this.age = age;
     }
 }
