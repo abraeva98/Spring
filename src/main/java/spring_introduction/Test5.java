@@ -10,19 +10,11 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  *
  * @author irinaabraeva
  */
-public class Test4 {
+public class Test5 {
     public static void main(String[] args) {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext2.xml");
         Dog myDog = context.getBean("myPet", Dog.class);
-        Dog yourDog = context.getBean("myPet", Dog.class);
-        
-        System.out.println(myDog == yourDog); // true if singleton, false is prototype
-        System.out.println(myDog.toString());
-        System.out.println(yourDog.toString());
-        
-//        myDog.setName("Belka");
-//        yourDog.setName("Strelka");
-//        System.out.println(myDog.getName());
-//        System.out.println(yourDog.getName());
+        myDog.say();
+        context.close();
     }
 }
