@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
  *
  * @author irinaabraeva
  */
-@Component("dogBean")
+//@Component("dogBean")
 @Scope("prototype")
 public class Dog implements Pet {
    // private String name;
@@ -24,14 +24,14 @@ public class Dog implements Pet {
     }
 
  //   @PostConstruct
-    public void init() {
-        System.out.println("init");
-    }
-    
-  //  @PreDestroy
-    public void destroy() {
-        System.out.println("destroy");
-    }
+//    public void init() {
+//        System.out.println("init");
+//    }
+//    
+//  //  @PreDestroy
+//    public void destroy() {
+//        System.out.println("destroy");
+//    }
     /**
      * @return the name
      */

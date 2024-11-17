@@ -19,16 +19,20 @@ public class Person {
  //   @Autowired
 //    @Qualifier("dogBean")
     private Pet pet;
-    @Value("${person.surname}")
+  //  @Value("${person.surname}")
     private String surname;
-    @Value("${person.age}")
+  //  @Value("${person.age}")
     private int age;
 
-    @Autowired
-    public Person(@Qualifier("dogBean") Pet pet) {
+    public Person(Pet pet) {
         System.out.println("Person is created");
         this.pet = pet;
     }
+//    @Autowired
+//    public Person(@Qualifier("dogBean") Pet pet) {
+//        System.out.println("Person is created");
+//        this.pet = pet;
+//    }
 //    
 //    public Person() {
 //        System.out.println("Person without arg is created");
