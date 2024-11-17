@@ -10,15 +10,14 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  *
  * @author irinaabraeva
  */
-public class ConfigWithAnnotations1 {
+public class ScopeTest {
     public static void main(String[] args) {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext3.xml");
-        Person person = context.getBean("personBean", Person.class);
-        System.out.println(person.getSurname());
-        System.out.println(person.getAge());
-        person.callYourPet();
-//        Cat myCat = context.getBean("catBean", Cat.class);
-        
+        Dog myDog = context.getBean("dogBean", Dog.class);
+        Dog yourDog = context.getBean("dogBean", Dog.class);
+        System.out.println(myDog == yourDog);
+        System.out.println(myDog);
+        System.out.println(yourDog);
         context.close();
     }
 }

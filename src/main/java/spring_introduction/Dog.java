@@ -4,6 +4,7 @@
  */
 package spring_introduction;
 
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 /**
@@ -11,6 +12,7 @@ import org.springframework.stereotype.Component;
  * @author irinaabraeva
  */
 @Component("dogBean")
+@Scope("prototype")
 public class Dog implements Pet {
    // private String name;
     public Dog() {
@@ -21,10 +23,12 @@ public class Dog implements Pet {
         System.out.println("Bow-Wow");
     }
 
+ //   @PostConstruct
     public void init() {
         System.out.println("init");
     }
     
+  //  @PreDestroy
     public void destroy() {
         System.out.println("destroy");
     }
