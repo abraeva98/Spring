@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
  *
  * @author irinaabraeva
  */
-//@Component("dogBean")
+@Component("dogBean")
 public class Dog implements Pet {
    // private String name;
     public Dog() {
