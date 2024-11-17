@@ -4,25 +4,31 @@
  */
 package spring_introduction;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 /**
  *
  * @author irinaabraeva
  */
+@Component("personBean")
 public class Person {
     private Pet pet;
     private String surname;
     private int age;
     
-    public Person(Pet pet) {
-        System.out.println("Person is created");
-        this.pet = pet;
-    }
-    
-    public Person() {
-        System.out.println("Person without arg is created");
-    }
-    
+//    @Autowired
+//    public Person(Pet pet) {
+//        System.out.println("Person is created");
+//        this.pet = pet;
+//    }
+//    
+//    public Person() {
+//        System.out.println("Person without arg is created");
+//    }
+//    
     // name="pet" -> setPet
+    @Autowired
     public void setPet(Pet pet) {
         System.out.println("Class Person: set pet");
         this.pet = pet;

@@ -4,10 +4,13 @@
  */
 package spring_introduction;
 
+import org.springframework.stereotype.Component;
+
 /**
  *
  * @author irinaabraeva
  */
+//@Component("dogBean")
 public class Dog implements Pet {
    // private String name;
     public Dog() {
