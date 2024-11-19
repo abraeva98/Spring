@@ -6,6 +6,7 @@ package spring_introduction;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.annotation.Scope;
 
 /**
@@ -13,6 +14,7 @@ import org.springframework.context.annotation.Scope;
  * @author irinaabraeva
  */
 @Configuration
+@PropertySource("classpath:myApp.properties")
 //@ComponentScan("spring_introduction") - looks for annotations
 public class MyConfig {
     // only this bean is created

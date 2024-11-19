@@ -16,6 +16,7 @@ public class Test6 {
         
         Person person = context.getBean("personBean", Person.class);
         Person person2 = context.getBean("personBean", Person.class);
+        System.out.println(person.getSurname());
 //        person.callYourPet();
         
 //        Pet cat = context.getBean("catBean", Pet.class);
