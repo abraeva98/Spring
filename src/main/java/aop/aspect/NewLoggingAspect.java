@@ -20,14 +20,15 @@ public class NewLoggingAspect {
     public Object aroundReturnBookLoggingAspect(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
         System.out.println("aroundReturnBookLoggingAspect: trying to return a book to the library");
         
-        long begin = System.currentTimeMillis();
-        System.out.println(begin);
-        Object res = proceedingJoinPoint.proceed();   
-        
-        long end = System.currentTimeMillis();
-        System.out.println(end);
-        System.out.println("aroundReturnBookLoggingAspect: returned a book to the library");
-        System.out.println("aroundReturnBookLoggingAspect: method return book took " + (end - begin) + " ms to complete");
+        Object res = null;         
+        try {
+            res = proceedingJoinPoint.proceed(); 
+        } catch(Exception e) {
+            System.out.println("aroundReturnBookLoggingAspect: exception was caught " + e);
+         //   res = "unknown book
+            throw e;
+        }
+           
         return res;
     }
 }

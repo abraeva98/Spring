@@ -19,6 +19,7 @@ public class UniLibrary extends AbstractLibrary {
     }
     
     public String returnBook() {
+        double k = 10 / 0;
         System.out.println("We return a book to Uni Library");
         System.out.println("----------------------------");
         return "War and Piece";
