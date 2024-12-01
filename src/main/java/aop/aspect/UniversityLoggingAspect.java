@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package aop.aspect;
-import org.aspectj.lang.annotation.AfterThrowing;
+import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.Aspect;
 import org.springframework.stereotype.Component;
 
@@ -31,9 +31,13 @@ public class UniversityLoggingAspect {
 //        firstStudent.setAvgGrade(avgGrade);
 //        System.out.println("afterGetStudentsLoggingAdvice: logging after getStudents");
 //    }
-    @AfterThrowing(pointcut = "execution(* getStudents())", throwing = "exception")
-    public void afterThrowingGetStudentsLoggingAdvice(Throwable exception) {
-        System.out.println("afterThrowingGetStudentsLoggingAdvice: logging exception " + exception);
+//    @AfterThrowing(pointcut = "execution(* getStudents())", throwing = "exception")
+//    public void afterThrowingGetStudentsLoggingAdvice(Throwable exception) {
+//        System.out.println("afterThrowingGetStudentsLoggingAdvice: logging exception " + exception);
+//    }
+    @After("execution(* getStudents())")
+    public void afterGetStudents() {
+        System.out.println("afterGetStudents: logging regardless of status");
     }
 }
 
