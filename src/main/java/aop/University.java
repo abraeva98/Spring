@@ -30,6 +30,7 @@ public class University {
     public List<Student> getStudents() {
         System.out.println("Info from mathod getStudents:");
         System.out.println(students);
+        System.out.println(students.get(4));
         return students;
     }
 }
