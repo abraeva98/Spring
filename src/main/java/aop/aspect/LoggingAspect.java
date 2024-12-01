@@ -8,13 +8,16 @@ import org.springframework.stereotype.Component;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
+import org.springframework.core.annotation.Order;
 /**
  *
  * @author irinaabraeva
  */
 @Component
 @Aspect
-public class LoggingAndSecurityAspect {
+@Order(1)
+public class LoggingAspect {
+    /*
     @Pointcut("execution(* aop.UniLibrary.*(..))")
     private void allMethodsFromUniLibrary() {};
     
@@ -27,7 +30,7 @@ public class LoggingAndSecurityAspect {
     @Before("allMethodsExceptReturnMagazineFromUniLibrary()")
     public void beforeAllMethodsExceptReturnMagazineFromUniLibrary() {
         System.out.println("beforeAllMethodsExceptReturnMagazineFromUniLibrary: log #10");
-    }
+    }*/
     /*
     @Pointcut("execution(* aop.UniLibrary.get*())")
     private void allGetMethodsFromUniLibrary() {};
@@ -56,19 +59,15 @@ public class LoggingAndSecurityAspect {
  /*
     @Pointcut("execution(* get*())")
     private void allGetMethods(){};
-            
-    @Before("allGetMethods()")
-    public void beforeGetLoggingAdvice() {
-        System.out.println("beforeGetLoggingAdvice: trying to get a book");
-    }
+           
     
     @Before("execution(public void returnBook())")
     public void beforeReturnBookAdvice() {
         System.out.println("beforeReturnBookAdvice: trying to return a book");
     }
-    
-    @Before("allGetMethods()")
-    public void beforeGetSecurityAdvice() {
-        System.out.println("beforeGetSecurityAdvice: check security");
-    }*/
+    */
+    @Before("aop.aspect.MyPointcuts.allGetMethods()")
+    public void beforeGetLoggingAdvice() {
+        System.out.println("beforeGetLoggingAdvice: trying to get a book");
+    }
 }
