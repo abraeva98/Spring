@@ -15,21 +15,26 @@ public class UniLibrary extends AbstractLibrary {
    // @Override
     public void getBook() {
         System.out.println("Get a book from Uni Library ");
+        System.out.println("----------------------------");
     }
     
     public void returnBook() {
         System.out.println("We return a book to Uni Library");
+        System.out.println("----------------------------");
     }
     
     public void returnMagazine() {
         System.out.println("We return a magazine to Uni Library");
+        System.out.println("----------------------------");
     }
     
-    public void addBook() {
+    public void addBook(String person_name, Book book) {
         System.out.println("We're adding a book to Uni Library");
+        System.out.println("----------------------------");
     }
     
     public void addMagazine() {
         System.out.println("We're adding a magazine to Uni Library");
+        System.out.println("----------------------------");
     }
 }

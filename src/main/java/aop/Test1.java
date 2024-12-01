@@ -23,13 +23,13 @@ public class Test1 {
      //   AbstractLibrary library1 = context.getBean("schoolLibrary", AbstractLibrary.class);
         //library1.getBook();
         
-       // Book book = context.getBean("book", Book.class);
-        uniLibrary.getBook();
+        Book book = context.getBean("book", Book.class);
+      //  uniLibrary.getBook();
   /*      uniLibrary.returnBook();
         
-        uniLibrary.addMagazine();
         uniLibrary.returnMagazine();*/
-        
+        uniLibrary.addBook("Irina", book);
+        uniLibrary.addMagazine();
         context.close();
     }
 }

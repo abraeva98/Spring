@@ -17,8 +17,9 @@ import org.springframework.stereotype.Component;
 @Aspect
 @Order(2)
 public class SecurityAspect {
-    @Before("aop.aspect.MyPointcuts.allGetMethods()")
-    public void beforeGetSecurityAdvice() {
+    @Before("aop.aspect.MyPointcuts.allAddMethods()")
+    public void beforeAddSecurityAdvice() {
         System.out.println("beforeGetSecurityAdvice: check security");
+        System.out.println("----------------------------");
     }
 }
