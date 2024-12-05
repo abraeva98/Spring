@@ -4,6 +4,7 @@
  */
 package hibernate_test.entity;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -20,7 +21,8 @@ public class Employee {
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY) // how to increment primary key in db -> strategy depends on db rule that was written
     private int id;
-    private String name;
+    @Column(name="name")
+    private String firstName;
     private String surname;
     private String department;
     private int salary;
@@ -30,7 +32,7 @@ public class Employee {
     }
     
     public Employee(String name, String surname, String department, int salary) {
-        this.name = name;
+        this.firstName = name;
         this.surname = surname;
         this.department = department;
         this.salary = salary;
@@ -53,15 +55,15 @@ public class Employee {
     /**
      * @return the name
      */
-    public String getName() {
-        return name;
+    public String getFirstName() {
+        return firstName;
     }
 
     /**
      * @param name the name to set
      */
-    public void setName(String name) {
-        this.name = name;
+    public void setFirstName(String name) {
+        this.firstName = name;
     }
 
     /**
@@ -87,7 +89,7 @@ public class Employee {
 
     @Override
     public String toString() {
-        return "Employee{" + "id=" + id + ", name=" + name + ", surname=" + surname + ", department=" + department + ", salary=" + salary + '}';
+        return "Employee{" + "id=" + id + ", name=" + firstName + ", surname=" + surname + ", department=" + department + ", salary=" + salary + '}';
     }
 
     /**
